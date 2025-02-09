@@ -5,7 +5,7 @@ const Links = [
     { href: '/counter', text: 'counter' },
     { href: '/blendedHouse', text: "Blended House" },
     { href: '/todo-list', text: 'todo list' },
-    { href: '/query', text: 'query' },
+    { href: '/prisma', text: 'prisma' },
 ]
 
 const Navbar = () => {
