@@ -2,13 +2,13 @@ import React from 'react';
 import prisma from "@/utils/db";
 
 const getAllTasks = async () => {
-    /*await prisma.task.create({
+    await prisma.task.create({
         data: {
-            content: 'buy milk',
+            content: 'Homes',
         },
-    })*/
+    })
 
-    await prisma.task.update({
+/*    await prisma.task.update({
         where: {
             id: "25cab9d0-fcec-453b-b9bc-a44281463755",
         },
@@ -21,7 +21,7 @@ const getAllTasks = async () => {
         where: {
             id: "25cab9d0-fcec-453b-b9bc-a44281463755",
         },
-    })
+    })*/
 
     const allTasks = await prisma.task.findMany();
     return allTasks;

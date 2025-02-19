@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ weight: ["400", "700"], subsets:  ["latin"] });
 
 export const metadata = {
-  title: "First Next.js App",
+  title: "New Landings Homes",
   description: "Lets learn baby",
 };
 
