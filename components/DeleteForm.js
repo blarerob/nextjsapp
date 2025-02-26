@@ -3,7 +3,7 @@ import React from 'react';
 const DeleteForm = () => {
   return (
     <div>
-      Sign-Up Form
+      Delete Form
     </div>
   );
 };

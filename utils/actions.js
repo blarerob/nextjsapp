@@ -2,24 +2,24 @@
 import prisma from "@/utils/db";
 import { revalidatePath } from "next/cache";
 
-const createTask = async (formData) => {
+const createOffer = async (formData) => {
 
-    formData.get("content");
-    await prisma.task.create({
+    formData.get("firstName");
+    await prisma.offer.create({
         data: {
-            name: "content",
+            name: "firstName",
         },
     });
 
     revalidatePath('/todo-list');
 };
 
-export const getAllTasks = async () => {
-    return await prisma.task.findMany({
+export const getAllOffers = async () => {
+    return await prisma.offer.findMany({
         orderBy: {
-            createdAt: 'desc',
+            lastName: 'desc',
         },
     });
 };
 
-export default createTask;
+export default createOffer;

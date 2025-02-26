@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/prisma/migrations/20250208090040_task_model/migration.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/prisma/migrations/20250221104044_with_offer_table/migration.sql" dialect="SQLite" />
+  </component>
+</project>

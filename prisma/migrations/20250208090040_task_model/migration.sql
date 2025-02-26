@@ -7,6 +7,16 @@ CREATE TABLE "User" (
 );
 
 -- CreateTable
+CREATE TABLE "Offer" (
+     "id" TEXT NOT NULL PRIMARY KEY,
+     "firstName" TEXT NOT NULL,
+     "lastName" TEXT NOT NULL,
+     "email" TEXT NOT NULL DEFAULT false,
+     "phone" TEXT NOT NULL DEFAULT false,
+     "message" TEXT NOT NULL DEFAULT false
+);
+
+-- CreateTable
 CREATE TABLE "Task" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "content" TEXT NOT NULL,

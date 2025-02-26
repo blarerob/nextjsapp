@@ -1,11 +1,12 @@
 import React from 'react';
+import SubmitForm from "@/components/SubmitForm";
+import Submits from "@/components/Submits";
 
 const ToDoList = () => {
-  return (
-    <div>
-        <h1 className="text-7xl">To-Do List</h1>
+  return <div className="max-w-lg">
+        <SubmitForm />
+        <Submits />
     </div>
-  );
 };
 
 export default ToDoList;
