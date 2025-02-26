@@ -1,23 +1,27 @@
+'use client';
 import React from 'react';
-import prisma from "@/utils/db";
+import {createOffer} from "@/utils/actions";
+import { useFormStatus, useFormState } from "react-dom";
 
-const createOffer = async (formData) => {
-    'use server';
+const initialState = {
+    message: null,
+};
 
-    const message = formData.get('message');
-    await prisma.offer.create({
-        data: {
-            message,
-            firstName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-        }
-    })
+const SubmitBtn = () => {
+    'use client';
+  const { pending } = useFormStatus();
+
+  return (
+      <button type="submit" className="btn btn-primary join-item" disabled={pending}>
+          {pending ? 'creating...' : 'create offer'}
+        </button>
+  )
 };
 
 const SubmitForm = () => {
-  return <form action={createOffer}>
+   const [state, formAction] = useFormState(createOffer, initialState);
+  return <form action={formAction}>
+      {state.message ? <p className="mb-2"> {state.message}</p> : null}
       <div className="join w-full mb-8">
           <input
               type="text"
@@ -26,9 +30,7 @@ const SubmitForm = () => {
               name="message"
               required
               />
-          <button type="submit" className="btn btn-primary join-item">
-              Submit
-          </button>
+          <SubmitBtn />
       </div>
   </form>
 };

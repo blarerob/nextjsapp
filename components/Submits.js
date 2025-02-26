@@ -1,14 +1,10 @@
 import React from 'react';
 import Link from "next/link";
 import DeleteForm from "@/components/DeleteForm";
-import prisma from "@/utils/db";
+import {getAllOffers} from "@/utils/actions";
 
 const Submits = async () => {
-   const offers = await prisma.offer.findMany({
-        orderBy: {
-            firstName: 'asc',
-        }
-    })
+    const offers = await getAllOffers();
 
     if(offers.length === 0) {
         return <h2 className="mt-8 font-medium text-lg">No offers to show</h2>
@@ -26,7 +22,7 @@ const Submits = async () => {
                {offer.message}
            </h2>
             <div className="flex gap-6 items-center">
-                <Link href={`/submits/${offer.id}`} className="btn btn-primary btn-xs">Edit</Link>
+                <Link href={`/todo-list/${offer.id}`} className="btn btn-primary btn-xs">Edit</Link>
                 <DeleteForm id={offer.id} />
             </div>
             <h2>{offer.firstName}</h2>

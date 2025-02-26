@@ -14,6 +14,7 @@ model Offer {
   email     String
   phone     String
   message   String
+  completed Boolean @default(false)
 }
 
 // model User {
