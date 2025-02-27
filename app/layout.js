@@ -1,6 +1,7 @@
 import './styles/globals.css';
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Providers from "@/app/providers";
 
 const inter = Inter({ weight: ["400", "700"], subsets:  ["latin"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
       >
       <Navbar />
       <main className="p-20 max-w-6xl mx-auto">
+          <Providers>
         {children}
+          </Providers>
       </main>
       </body>
     </html>

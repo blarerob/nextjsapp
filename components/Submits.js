@@ -6,9 +6,9 @@ import {getAllOffers} from "@/utils/actions";
 const Submits = async () => {
     const offers = await getAllOffers();
 
-    if(offers.length === 0) {
-        return <h2 className="mt-8 font-medium text-lg">No offers to show</h2>
-    }
+    // if(offers.length === 0) {
+    //     return <h2 className="mt-8 font-medium text-lg">No offers to show</h2>
+    // }
 
     return (
     <ul>
@@ -21,7 +21,7 @@ const Submits = async () => {
            >
                {offer.message}
            </h2>
-            <div className="flex gap-6 items-center">
+            <div className="flex gap-6 items-center ml-auto">
                 <Link href={`/todo-list/${offer.id}`} className="btn btn-primary btn-xs">Edit</Link>
                 <DeleteForm id={offer.id} />
             </div>
