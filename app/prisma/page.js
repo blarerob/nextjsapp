@@ -2,15 +2,15 @@ import React from 'react';
 import prisma from "@/utils/db";
 
 const getAllOffers = async () => {
-     await prisma.offer.create({
-        data: {
-            message: 'Sell your home',
-            firstName: 'John',
-            lastName: 'Doe',
-            email: '',
-            phone: '',
-        },
-    })
+    //  await prisma.offer.create({
+    //     data: {
+    //         message: 'Sell your home',
+    //         firstName: 'John',
+    //         lastName: 'Doe',
+    //         email: '',
+    //         phone: '',
+    //     },
+    // })
 
     // await prisma.offer.update({
     //     where: {
