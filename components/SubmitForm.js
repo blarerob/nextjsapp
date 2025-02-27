@@ -91,7 +91,7 @@ const SubmitForm = () => {
       <div>
           <SubmitBtn />
       </div>
-          <button type="button" className="btn btn-neutral max-w-28 mt-2 flex items-center mb-16" onClick={() => router.back()}>
+          <button type="button" className="btn btn-neutral max-w-28 mt-2 flex items-center mb-16 fixed bottom-0 left-9 right-0" onClick={() => router.back()}>
               Go Back
           </button>
 
