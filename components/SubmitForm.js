@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import {createOffer} from "@/utils/actions";
 import { useFormStatus, useFormState } from "react-dom";
 import toast from "react-hot-toast";
+import {useRouter} from "next/navigation";
 
 const initialState = {
     message: null,
@@ -33,6 +34,7 @@ const SubmitBtn = () => {
 };
 
 const SubmitForm = () => {
+    const router = useRouter();
    const [state, formAction] = useFormState(createOffer, initialState);
     useEffect(() => {
         if (state.status === 400) {
@@ -86,7 +88,13 @@ const SubmitForm = () => {
               name="message"
           />
       </div>
-      <SubmitBtn />
+      <div>
+          <SubmitBtn />
+      </div>
+          <button type="button" className="btn btn-neutral max-w-28 mt-2 flex items-center mb-16" onClick={() => router.back()}>
+              Go Back
+          </button>
+
   </form>
 };
 

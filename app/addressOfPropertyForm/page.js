@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import { createTask } from "@/utils/actions";
 import { LoadScript, Autocomplete } from '@react-google-maps/api';
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 const AddressOfPropertyForm = () => {
+    const router = useRouter();
 const [address, setAddress] = useState('');
 
 const handlePlaceChanged = (autocomplete) => {
@@ -27,12 +29,15 @@ return (
            required
          />
        </Autocomplete>
-       <Link href="/sendOfferForm" type="button" className="btn btn-secondary btn-nav-lg w-full mb-2">
+       <Link href="/todo-list" type="button" className="btn btn-secondary btn-nav-lg w-full mb-2">
          <button type="submit">
            Submit
          </button>
        </Link>
      </div>
+       <button type="button" className="btn btn-neutral max-w-28 mt-2 flex items-center" onClick={() => router.back()}>
+           Go Back
+       </button>
    </form>
  </LoadScript>
 );

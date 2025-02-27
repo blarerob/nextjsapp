@@ -2,8 +2,10 @@
 import React from 'react';
 import { createTask } from "@/utils/actions";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 const LookingToSell = () => {
+    const router = useRouter();
     return (
         <form action={createTask}>
             <h2 className="text-center font-extrabold mb-3">How Soon Are You Looking to Sell?</h2>
@@ -41,6 +43,9 @@ const LookingToSell = () => {
                     </button>
                 </Link>
             </div>
+            <button type="button" className="btn btn-neutral max-w-28 mt-2 flex items-center" onClick={() => router.back()}>
+                Go Back
+            </button>
         </form>
     );
 };

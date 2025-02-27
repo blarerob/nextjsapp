@@ -2,10 +2,8 @@ import React from 'react';
 import Link from "next/link";
 
 const Links = [
-    { href: '/counter', text: 'counter' },
-    { href: '/blendedHouse', text: "Blended House" },
-    { href: '/todo-list', text: 'todo list' },
-    { href: '/prisma', text: 'prisma' },
+    { href: '/todo-list', text: '' },
+    { href: '/prisma', text: '' },
 ]
 
 const Navbar = () => {
@@ -16,7 +14,7 @@ const Navbar = () => {
           <ul className="menu md:ml-8 flex sm:flex-row space-x-4">
             {Links.map((link) => (
                 <li key={link.href}>
-                    <Link href={link.href} className="capitalize">
+                    <Link href={link.href} className="capitalize text-cyan-50">
                         {link.text}
                     </Link>
                 </li>

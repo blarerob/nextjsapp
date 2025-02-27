@@ -2,8 +2,12 @@
 import React from 'react';
 import { createTask } from "@/utils/actions";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
-const ownedPropertyForm = () => {
+
+const OwnedPropertyForm = () => {
+    const router = useRouter();
+
     return (
         <form action={createTask}>
             <h2 className="text-center font-extrabold mb-2">How Long Have You Owned the Property?</h2>
@@ -29,8 +33,11 @@ const ownedPropertyForm = () => {
                     </button>
                 </Link>
             </div>
+            <button type="button" className="btn btn-neutral max-w-28 mt-2 flex items-center" onClick={() => router.back()}>
+                Go Back
+            </button>
         </form>
     );
 };
 
-export default ownedPropertyForm;
+export default OwnedPropertyForm;
